@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vite-study/vite-plugin-hook-logger": "workspace:^1.0.0",
+    "@vite-study/vite-plugin-no-console": "workspace:^1.0.0",
     "@vite-study/vite-plugin-text-replace": "workspace:^1.0.0",
     "@vite-study/vite-plugin-timer": "workspace:^1.0.0",
     "ant-design-vue": "^4.1.2",

@@ -1,0 +1,22 @@
+{
+  "name": "@vite-study/vite-plugin-no-console",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/vite-plugin-no-console.esm.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.11.10",
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "4"
+  }
+}

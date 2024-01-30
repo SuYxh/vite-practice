@@ -7,6 +7,7 @@ defineProps<{ msg: string }>()
 const content = ref(0)
 
 const getGushici = () => {
+  console.log('getGushici');
   axios.get('https://v2.jinrishici.com/one.json').then(res => {
     const { data } = res
     content.value = data.data.content

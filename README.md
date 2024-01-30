@@ -88,9 +88,7 @@ Vite 插件的生命周期基于 Rollup 的插件系统，但是 Vite 对其进�
 - [vite-plugin-timer](./packages/vite-plugin-timer/README.md): 构建计时插件
 - [vite-plugin-hook-logger](./packages/vite-plugin-hook-logger/README.md): Vite 钩子日志插件
 - [vite-plugin-text-replace](./packages/vite-plugin-text-replace/README.md): Vite 文案替换插件
-
-
-
+- [ite-plugin-no-console](./packages/vite-plugin-no-console/README.md): 删除 console
 
 
 
