@@ -1,0 +1,16 @@
+{
+  "name": "vite-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm --filter vue3-vite-ts run build",
+    "clean": "rimraf 'packages/*/node_modules'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^5.0.5"
+  }
+}
