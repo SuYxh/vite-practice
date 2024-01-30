@@ -2,7 +2,7 @@ import { Plugin } from 'vite';
 
 function viteHookLogger(): Plugin {
   return {
-    name: 'vite-hook-logger',
+    name: 'vite-plugin-hook-logger',
     // Vite-specific hooks
     configureServer(server) {
       console.log('configureServer called');

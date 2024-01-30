@@ -4,7 +4,7 @@ const viteBuildTimer = (): Plugin => {
   let startTime: number;
 
   return {
-    name: 'vite-build-timer',
+    name: 'vite-plugin-timer',
     buildStart() {
       startTime = Date.now();
       console.log('Build started...');
