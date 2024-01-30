@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vite-study/vite-plugin-timer": "workspace:^1.0.0",
     "ant-design-vue": "^4.1.2",
     "axios": "^1.6.7",
     "element-plus": "^2.5.3",

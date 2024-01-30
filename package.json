@@ -2,7 +2,7 @@
   "name": "vite-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "pnpm --filter vue3-vite-ts run build",
     "clean": "rimraf 'packages/*/node_modules'"
