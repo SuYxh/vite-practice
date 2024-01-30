@@ -6,6 +6,6 @@ vite 学习
 
 
 ```
-pnpm i @vite-study/vite-plugin-timer --filter vue3-vite-ts
+pnpm i @vite-study/vite-plugin-hook-logger --filter vue3-vite-ts
 ```
 
