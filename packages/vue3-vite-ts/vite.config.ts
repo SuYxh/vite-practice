@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import vitePluginTimer from '@vite-study/vite-plugin-timer';
 import createReplacePlugin from '@vite-study/vite-plugin-text-replace';
 import vitePluginNoConsole from '@vite-study/vite-plugin-no-console';
+import vitePluginVisualizer from '@vite-study/vite-plugin-visualizer';
 
 // import vitePluginHookLogger from '@vite-study/vite-plugin-hook-logger';
 // import inspect from 'vite-plugin-inspect';
@@ -26,5 +27,6 @@ export default defineConfig({
     ]),
     vitePluginNoConsole(),
     vue(),
+    vitePluginVisualizer(),
   ],
 })

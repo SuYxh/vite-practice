@@ -14,6 +14,7 @@
     "@vite-study/vite-plugin-no-console": "workspace:^1.0.0",
     "@vite-study/vite-plugin-text-replace": "workspace:^1.0.0",
     "@vite-study/vite-plugin-timer": "workspace:^1.0.0",
+    "@vite-study/vite-plugin-visualizer": "workspace:^1.0.0",
     "ant-design-vue": "^4.1.2",
     "axios": "^1.6.7",
     "element-plus": "^2.5.3",
