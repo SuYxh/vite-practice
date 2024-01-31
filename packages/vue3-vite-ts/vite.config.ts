@@ -4,6 +4,7 @@ import vitePluginTimer from '@vite-study/vite-plugin-timer';
 import createReplacePlugin from '@vite-study/vite-plugin-text-replace';
 import vitePluginNoConsole from '@vite-study/vite-plugin-no-console';
 import vitePluginVisualizer from '@vite-study/vite-plugin-visualizer';
+import vitePluginProgress from '@vite-study/vite-plugin-progress';
 
 // import vitePluginHookLogger from '@vite-study/vite-plugin-hook-logger';
 // import inspect from 'vite-plugin-inspect';
@@ -11,6 +12,7 @@ import vitePluginVisualizer from '@vite-study/vite-plugin-visualizer';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    vitePluginProgress(),
     // inspect({
     //   build: true
     // }),

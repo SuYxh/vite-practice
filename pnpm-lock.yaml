@@ -44,6 +44,31 @@ importers:
       typescript: 5.3.3
       vite: 4.5.2_@types+node@20.11.10
 
+  packages/vite-plugin-progress:
+    specifiers:
+      '@rollup/plugin-typescript': ^11.1.6
+      '@types/node': ^20.11.10
+      '@types/progress': ^2.0.7
+      picocolors: ^1.0.0
+      progress: ^2.0.3
+      rd: ^2.0.1
+      rollup: ^4.9.6
+      tslib: ^2.6.2
+      typescript: ^5.2.2
+      vite: '4'
+    dependencies:
+      rd: 2.0.1
+    devDependencies:
+      '@rollup/plugin-typescript': 11.1.6_7mltky7odvhh34s2qydc5iv3ui
+      '@types/node': 20.11.10
+      '@types/progress': 2.0.7
+      picocolors: 1.0.0
+      progress: 2.0.3
+      rollup: 4.9.6
+      tslib: 2.6.2
+      typescript: 5.3.3
+      vite: 4.5.2_@types+node@20.11.10
+
   packages/vite-plugin-text-replace:
     specifiers:
       '@rollup/plugin-typescript': ^11.1.6
@@ -78,6 +103,7 @@ importers:
     specifiers:
       '@vite-study/vite-plugin-hook-logger': workspace:^1.0.0
       '@vite-study/vite-plugin-no-console': workspace:^1.0.0
+      '@vite-study/vite-plugin-progress': workspace:^1.0.0
       '@vite-study/vite-plugin-text-replace': workspace:^1.0.0
       '@vite-study/vite-plugin-timer': workspace:^1.0.0
       '@vite-study/vite-plugin-visualizer': workspace:^1.0.0
@@ -94,6 +120,7 @@ importers:
     dependencies:
       '@vite-study/vite-plugin-hook-logger': link:../vite-plugin-hook-logger
       '@vite-study/vite-plugin-no-console': link:../vite-plugin-no-console
+      '@vite-study/vite-plugin-progress': link:../vite-plugin-progress
       '@vite-study/vite-plugin-text-replace': link:../vite-plugin-text-replace
       '@vite-study/vite-plugin-timer': link:../vite-plugin-timer
       '@vite-study/vite-plugin-visualizer': link:../vite-plugin-visualizer
@@ -1005,10 +1032,20 @@ packages:
     resolution: {integrity: sha512-6L6VymKTzYSrEf4Nev4Xa1LCHKrlTlYCBMTlQKFuddo1CvQcE52I0mwfOJayueUC7MJuXOeHTcIU683lzd0cUA==}
     dev: true
 
+  /@types/node/10.17.60:
+    resolution: {integrity: sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==}
+    dev: false
+
   /@types/node/20.11.10:
     resolution: {integrity: sha512-rZEfe/hJSGYmdfX9tvcPMYeYPW2sNl50nsw4jZmRcaG0HIAb0WYEpsB05GOb53vjqpyE9GUhlDQ4jLSoB5q9kg==}
     dependencies:
       undici-types: 5.26.5
+    dev: true
+
+  /@types/progress/2.0.7:
+    resolution: {integrity: sha512-iadjw02vte8qWx7U0YM++EybBha2CQLPGu9iJ97whVgJUT5Zq9MjAPYUnbfRI2Kpehimf1QjFJYxD0t8nqzu5w==}
+    dependencies:
+      '@types/node': 20.11.10
     dev: true
 
   /@types/web-bluetooth/0.0.16:
@@ -1879,8 +1916,19 @@ packages:
     resolution: {integrity: sha512-nHHTeFVBTHRGxJXKkKu5hT8C/YWBkPso4/Gad6xuj5dbptt9iF9NZr9pHbPhBrnT2klheu7mHTxTZ/LjwJiEiQ==}
     dev: true
 
+  /progress/2.0.3:
+    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
+    engines: {node: '>=0.4.0'}
+    dev: true
+
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
+
+  /rd/2.0.1:
+    resolution: {integrity: sha512-/XdKU4UazUZTXFmI0dpABt8jSXPWcEyaGdk340KdHnsEOdkTctlX23aAK7ChQDn39YGNlAJr1M5uvaKt4QnpNw==}
+    dependencies:
+      '@types/node': 10.17.60
     dev: false
 
   /regenerator-runtime/0.14.1:
