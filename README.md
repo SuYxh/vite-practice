@@ -1,14 +1,81 @@
 # 现在学习 vite 还来得及吗？
 
+## 简介
+
+Vite 是一个现代的前端构建工具，由 Vue.js 的创作者尤雨溪（Evan You）开发。Vite 的目标是提供一个更快、更轻量的开发环境。它利用了 JavaScript 的原生模块系统（ESM - ECMAScript Modules），这使得它能够在浏览器中直接运行源代码，从而实现快速的热模块替换（HMR - Hot Module Replacement）。
+
+Vite 的主要特点包括：
+
+1. **快速的冷启动**：Vite 利用现代浏览器支持的原生 ECMAScript 模块（ESM）来直接加载模块。这意味着在开发过程中，Vite 不需要对代码进行打包和构建，从而大大减少了启动时间。
+2. **即时的模块热更新(HMR)**：由于 Vite 使用 ESM，所以可以实现更快速的热模块替换。只有实际更改的模块会被重新加载和更新，而不是整个页面或整个应用，这使得开发过程中的响应时间更短。
+3. **按需编译**：传统的打包工具在开发过程中会对整个应用进行打包，这可能会很慢，特别是对于大型项目。而 Vite 只会在浏览器请求时才编译这个模块，未被请求的模块不会被编译，从而大大加快了加载速度。
+4. **内建的 TypeScript 支持**：不需要额外的插件或配置。
+5. **丰富的插件生态**：可以轻松集成各种工具和框架，如 Vue、React 等。
+6. **优化的生产构建**：利用 Rollup 打包，为生产环境提供优化过的代码。
+7. **优化的依赖预构建**：对于那些不支持 ESM 的依赖，Vite 会在第一次启动时进行预构建，并缓存结果。这意味着重复的构建时间被大大减少，因为只有在依赖项发生变化时才需要重新构建。
+
+Vite 的设计哲学是利用现代浏览器支持的原生 ESM 特性，减少传统构建工具所需的复杂配置和构建时间，提供更轻松、更快速的开发体验。
+
+
+
+![esm.3070012d.png](https://qn.huat.xyz/mac/202401311928364.awebp)
 
 
 
 
-## 基础配置
+
+## vite 插件钩子
+
+### 1. vite 独有的钩子
+
+1. `enforce` ：值可以是`pre` 或 `post` ， `pre` 会较于 `post` 先执行；
+2. `apply` ：值可以是 `build` 或 `serve`  亦可以是一个函数，指明它们仅在 `build` 或 `serve` 模式时调用；
+3. `config(config, env)` ：可以在 vite 被解析之前修改 vite 的相关配置。钩子接收原始用户配置 config 和一个描述配置环境的变量env；
+4. `configResolved(resolvedConfig)` ：在解析 vite 配置后调用。使用这个钩子读取和存储最终解析的配置。当插件需要根据运行的命令做一些不同的事情时，它很有用。
+5. `configureServer(server)` ：主要用来配置开发服务器，为 dev-server (connect 应用程序) 添加自定义的中间件；
+6. `transformIndexHtml(html)` ：转换 index.html 的专用钩子。钩子接收当前的 HTML 字符串和转换上下文；
+7. `handleHotUpdate(ctx)`：执行自定义HMR更新，可以通过ws往客户端发送自定义的事件；
+
+### 2. vite 与 rollup 的通用钩子之构建阶段
+
+1. `options(options)` ：在服务器启动时被调用：获取、操纵Rollup选项，严格意义上来讲，它执行于属于构建阶段之前；
+2. `buildStart(options)`：在每次开始构建时调用；
+3. `resolveId(source, importer, options)`：在每个传入模块请求时被调用，创建自定义确认函数，可以用来定位第三方依赖；
+4. `load(id)`：在每个传入模块请求时被调用，可以自定义加载器，可用来返回自定义的内容；
+5. `transform(code, id)`：在每个传入模块请求时被调用，主要是用来转换单个模块；
+6. `buildEnd(error?: Error)`：在构建阶段结束后被调用，此处构建结束只是代表所有模块转义完成；
+
+### 3. vite 与 rollup 的通用钩子之输出阶段
+
+1. `outputOptions(options)`：接受输出参数；
+2. `renderStart(outputOptions, inputOptions)`：每次 bundle.generate 和 bundle.write 调用时都会被触发；
+3. `augmentChunkHash(chunkInfo)`：用来给 chunk 增加 hash；
+4. `renderChunk(code, chunk, options)`：转译单个的chunk时触发。rollup 输出每一个chunk文件的时候都会调用；
+5. `generateBundle(options, bundle, isWrite)`：在调用 bundle.write 之前立即触发这个 hook；
+6. `writeBundle(options, bundle)`：在调用 bundle.write后，所有的chunk都写入文件后，最后会调用一次 writeBundle；
+7. `closeBundle()`：在服务器关闭时被调用
 
 
 
-## 进阶配置
+## 插件钩子函数 hooks 的执行顺序
+
+![vite插件开发钩子函数 (1).png](https://qn.huat.xyz/mac/202401311925610.awebp)
+
+
+
+## 插件的执行顺序
+
+1. 别名处理Alias
+2. 用户插件设置`enforce: 'pre'`
+3. vite 核心插件
+4. 用户插件未设置`enforce`
+5. vite 构建插件
+6. 用户插件设置`enforce: 'post'`
+7. vite 构建后置插件(minify, manifest, reporting)
+
+
+
+
 
 
 
