@@ -17,6 +17,7 @@
     "@vite-study/vite-plugin-visualizer": "workspace:^1.0.0",
     "ant-design-vue": "^4.1.2",
     "axios": "^1.6.7",
+    "echarts": "^5.4.3",
     "element-plus": "^2.5.3",
     "vue": "^3.3.11"
   },

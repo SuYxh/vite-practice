@@ -1,5 +1,8 @@
 <script setup lang="ts">
+
 import HelloWorld from './components/HelloWorld.vue'
+import TreemapChart from './components/TreemapChart/index.vue'
+
 </script>
 
 <template>
@@ -12,6 +15,8 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+
+  <TreemapChart></TreemapChart>
 </template>
 
 <style scoped>
